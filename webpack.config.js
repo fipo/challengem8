@@ -12,7 +12,7 @@ module.exports = function (env = 'development') {
   return {
     context: sourcePath,
     entry: {
-      main: ['./index.js'],
+      main: ['./index.jsx'],
       vendor: [
         'react',
         'react-dom'
@@ -24,10 +24,13 @@ module.exports = function (env = 'development') {
       port: 3000,
       open: true,
     },
+    resolve: {
+      extensions: ['.js', '.jsx']
+    },
     module: {
       rules: [
         {
-          test: /\.js?$/,
+          test: /\.(js|jsx)$/,
           exclude: /node_modules/,
           use: [
             "babel-loader",
@@ -48,13 +51,14 @@ module.exports = function (env = 'development') {
       new CleanWebpackPlugin(['dist']),
       new HtmlWebpackPlugin({
         chunks: ['vendor', 'main'],
-        template: 'index.html'
+        template: '../public/index.html'
       })
     ],
     output: {
       path: outPath,
       publicPath: '/',
-      filename: '[name].[chunkhash].js'
+      filename: '[name].[chunkhash].js',
+      sourceMapFilename: 'bundle.map',
     }
   }
 }
