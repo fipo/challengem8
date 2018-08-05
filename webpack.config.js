@@ -30,12 +30,8 @@ module.exports = function (env = 'development') {
           test: /\.js?$/,
           exclude: /node_modules/,
           use: [
-            {
-              loader: 'babel-loader',
-              options: {
-                babelrc: true,
-              }
-            }
+            "babel-loader",
+            "eslint-loader",
           ]
         },
         {
