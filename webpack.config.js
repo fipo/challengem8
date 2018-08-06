@@ -47,12 +47,12 @@ module.exports = function (env = 'development') {
           },
         },
         {
+          test: /\.css$/,
+          use: ['style-loader', 'css-loader']
+        },
+        {
           test: /\.hbs$/,
-          use: [
-            {
-              loader: "handlebars-loader"
-            }
-          ]
+          loader: "handlebars-loader"
         }
       ]
     },
