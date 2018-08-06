@@ -10,19 +10,19 @@ module.exports = function (env = 'development') {
   const isProduction = env === 'production';
 
   return {
+    mode: env,
     context: sourcePath,
     entry: {
       main: ['./index.jsx'],
-      vendor: [
-        'react',
-        'react-dom'
-      ]
+      vendor: ['react', 'react-dom']
     },
     devtool: isProduction ? 'source-map' : 'eval-source-map',
     devServer: {
       contentBase: sourcePath,
       port: 3000,
       open: true,
+      stats: 'errors-only',
+      clientLogLevel: 'error'
     },
     resolve: {
       extensions: ['.js', '.jsx']
@@ -30,18 +30,27 @@ module.exports = function (env = 'development') {
     module: {
       rules: [
         {
-          test: /\.(js|jsx)$/,
+          enforce: "pre",
+          test: /\.jsx?$/,
           exclude: /node_modules/,
-          use: [
-            "babel-loader",
-            "eslint-loader",
-          ]
+          loader: "eslint-loader",
+          options: {
+            emitWarning: true
+          }
         },
         {
-          test: /\.html$/,
+          test: /\.jsx?$/,
+          exclude: /node_modules/,
+          loader: 'babel-loader',
+          options: {
+            babelrc: true
+          },
+        },
+        {
+          test: /\.hbs$/,
           use: [
             {
-              loader: "html-loader"
+              loader: "handlebars-loader"
             }
           ]
         }
@@ -50,15 +59,15 @@ module.exports = function (env = 'development') {
     plugins: [
       new CleanWebpackPlugin(['dist']),
       new HtmlWebpackPlugin({
+        title: 'Challenge M8',
         chunks: ['vendor', 'main'],
-        template: '../public/index.html'
+        template: '../public/index.hbs'
       })
     ],
     output: {
       path: outPath,
       publicPath: '/',
       filename: '[name].[chunkhash].js',
-      sourceMapFilename: 'bundle.map',
     }
   }
 }
