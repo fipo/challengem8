@@ -5,10 +5,12 @@
   "private": true,
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "prestart": "firebase functions:config:get > .firebase-config.json",
     "start": "webpack-dev-server --mode development --color --progress",
     "build": "webpack --mode production",
     "predeploy": "yarn build",
     "deploy": "firebase deploy",
+    "deploy:functions": "firebase deploy --only functions",
     "postdeploy": "rimraf ./dist"
   },
   "author": "Philip Sotirov | @fipo",
@@ -36,7 +38,7 @@
     "webpack-dev-server": "^3.1.4"
   },
   "dependencies": {
-    "firebase-tools": "^4.0.2",
+    "firebase": "^5.5.8",
     "react": "^16.4.1",
     "react-dom": "^16.4.1"
   }
