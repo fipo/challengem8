@@ -8,6 +8,13 @@
 - [ ] Add Firebase integration
 - [ ] Add Firebase Authentication
 
+## Setup
+* `$ git clone git@github.com:fipo/challengem8.git`
+* `$ yarn`
+* `$ yarn global add firebase-tools`
+* `$ firebase login`
+* `$ yarn start`
+
 ## Webpack
 
 * ESLint
