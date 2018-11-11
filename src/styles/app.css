@@ -28,7 +28,6 @@ article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section { display: block; }
 body { line-height: 1; }
 
-
 ol, ul { list-style: none; }
 
 blockquote, q { quotes: none; }
@@ -37,15 +36,21 @@ blockquote:before, blockquote:after, q:before, q:after { content: ''; content: n
 
 table { border-collapse: collapse; border-spacing: 0; }
 
-html { box-sizing: border-box; font-size: 62.5%; }
+html {
+	box-sizing: border-box;
+	font-size: 62.5%;
+	height: 100%
+}
 
 *,
 *:before,
 *:after { box-sizing: inherit; }
 
 body {
+	background: linear-gradient(135deg, #f1806c 0%,#e0e345 60%,#e0e345 100%);
   font-family: 'Open Sans', sans-serif;
   font-size: 1.4rem;
-  font-weight: 400;
+	font-weight: 400;
+	height: 100%;
 }
 

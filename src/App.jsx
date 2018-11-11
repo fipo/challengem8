@@ -1,6 +1,8 @@
 import React from 'react';
 import { firestore } from './firebase';
 
+import './styles/app.css';
+
 class App extends React.Component{
   componentDidMount() {
     firestore.collection("users").get().then((querySnapshot) => {
