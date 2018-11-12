@@ -3,6 +3,8 @@ import { firestore } from './firebase';
 
 import './styles/app.css';
 
+import Home from 'src/scenes/Home';
+
 class App extends React.Component{
   componentDidMount() {
     firestore.collection("users").get().then((querySnapshot) => {
@@ -15,7 +17,7 @@ class App extends React.Component{
 
   render() {
     return(
-      <div>Foo</div>
+      <Home />
     )
   }
 }

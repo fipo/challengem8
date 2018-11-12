@@ -12,7 +12,12 @@ module.exports = {
     main: './index.jsx',
   },
   resolve: {
-    extensions: ['.js', '.jsx']
+    extensions: ['.js', '.jsx'],
+    alias: {
+      'src/components': path.join(sourcePath, 'components'),
+      'src/scenes': path.join(sourcePath, 'scenes'),
+      'src': sourcePath
+    }
   },
   module: {
     rules: [
