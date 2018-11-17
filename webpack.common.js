@@ -9,10 +9,10 @@ const outPath = path.join(__dirname, './dist');
 module.exports = {
   context: sourcePath,
   entry: {
-    main: './index.jsx',
+    main: './index.js',
   },
   resolve: {
-    extensions: ['.js', '.jsx'],
+    extensions: ['.js'],
     alias: {
       'src/components': path.join(sourcePath, 'components'),
       'src/scenes': path.join(sourcePath, 'scenes'),

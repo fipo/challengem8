@@ -4,8 +4,8 @@
 
 - [x] Setup initial webpack
 - [x] Add basic skeleton
-- [ ] Add Redux
-- [ ] Add Firebase integration
+- [x] Add Redux
+- [x] Add Firebase integration
 - [ ] Add Firebase Authentication
 
 ## Setup
