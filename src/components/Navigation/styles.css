@@ -1,0 +1,13 @@
+.top-navigation {
+  background: rgba(255, 255, 255, 0.5);
+  align-items: center;
+  display: flex;
+  justify-content: flex-end;
+  line-height: 18px;
+  padding: 8px;
+  text-align: right;
+}
+
+.top-navigation svg{
+  margin-left: 8px;
+}

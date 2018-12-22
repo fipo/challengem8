@@ -6,7 +6,6 @@ import store from './store';
 
 import App from 'src/scenes/App';
 
-
 ReactDOM.render(
   <Provider store={store}>
     <App />

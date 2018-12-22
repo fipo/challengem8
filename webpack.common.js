@@ -2,21 +2,22 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 
-
 const sourcePath = path.join(__dirname, './src');
 const outPath = path.join(__dirname, './dist');
 
 module.exports = {
   context: sourcePath,
   entry: {
-    main: './index.js',
+    main: './index.js'
   },
   resolve: {
     extensions: ['.js'],
     alias: {
+      'src/common': path.join(sourcePath, 'common'),
       'src/components': path.join(sourcePath, 'components'),
+      'src/firebase': path.join(sourcePath, 'firebase'),
       'src/scenes': path.join(sourcePath, 'scenes'),
-      'src': sourcePath
+      src: sourcePath
     }
   },
   module: {
@@ -36,7 +37,7 @@ module.exports = {
         loader: 'babel-loader',
         options: {
           babelrc: true
-        },
+        }
       },
       {
         test: /\.css$/,
@@ -59,6 +60,6 @@ module.exports = {
   output: {
     path: outPath,
     publicPath: '/',
-    filename: '[name].[chunkhash].js',
+    filename: '[name].[chunkhash].js'
   }
-}
+};
