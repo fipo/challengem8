@@ -1,9 +1,11 @@
 import { combineReducers } from 'redux';
 
 import session from 'src/services/session/reducer';
-import challenges from 'src/services/challenges/reducer';
+import challenge from 'src/services/challenge/reducer';
+import user from 'src/services/user/reducer';
 
 export default combineReducers({
-  challenges,
+  challenge,
   session,
+  user
 });

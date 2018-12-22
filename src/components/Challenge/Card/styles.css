@@ -1,0 +1,41 @@
+.card {
+  margin: 8px;
+  background: white;
+  border-radius: 4px;
+  padding: 16px;
+  box-shadow: 1px 1px 2px #707070;
+  width: 230px;
+}
+
+.card.before {
+  opacity: 0.8;
+}
+
+.card.today {
+  box-shadow: 3px 4px 6px #383838;
+}
+
+.card.today .cardHead h4 {
+  color: #000;
+}
+
+.card .cardHead {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 0 16px;
+}
+
+.card .cardHead h4 {
+  color: #383838;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 18px;
+  text-transform: uppercase;
+  letter-spacing: -2px;
+}
+
+.card .cardHead span {
+  color: #252525;
+  font-style: italic;
+  font-size: 13px;
+}

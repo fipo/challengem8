@@ -2,16 +2,18 @@ import { ActionTypes } from './actions';
 
 const initialState = {};
 
-function challengesReducer(state = initialState, action) {
+function userReducer(state = initialState, action) {
   switch (action.type) {
-    case ActionTypes.ReceiveChallenges:
+    case ActionTypes.ReceiveUserChallenges:
       return {
         ...state,
         ...action.payload
       };
+    case ActionTypes.AuthSignOut:
+      return initialState;
     default:
       return state;
   }
 }
 
-export default challengesReducer;
+export default userReducer;
