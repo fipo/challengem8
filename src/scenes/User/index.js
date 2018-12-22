@@ -36,10 +36,10 @@ class User extends React.Component {
     const { challenge, user } = this.props;
     return (
       <main>
-        <p>
+        {/* <p>
           {user.displayName}
           <img src={user.photoURL} alt={user.displayName} />
-        </p>
+        </p> */}
         {user.challenges ? (
           <Challenge
             challenge={challenge}

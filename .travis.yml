@@ -1,0 +1,21 @@
+language: node_js
+node_js:
+- 8.11.4
+branches:
+  only:
+  - master
+  - production
+install:
+- npm install -g firebase-tools
+- cd ./functions && npm i && cd ..
+- yarn install
+script:
+- yarn build
+deploy:
+  provider: script
+  script: firebase deploy --token $FIREBASE_TOKEN
+  skip_cleanup: true
+  on:
+    branch: production
+notifications:
+  slack: vertie:cXYHn7IC3nkmJiPMcW4Kh0xo

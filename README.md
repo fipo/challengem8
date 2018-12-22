@@ -1,5 +1,7 @@
 # Challenge M8
 
+[![Build Status](https://travis-ci.com/fipo/challengem8.svg?branch=master)](https://travis-ci.com/fipo/challengem8)
+
 ## Becklog
 
 - [x] Setup initial webpack
