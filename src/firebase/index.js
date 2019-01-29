@@ -13,8 +13,6 @@ firebase.initializeApp({
 });
 
 const firestore = firebase.firestore();
-firestore.settings({ timestampsInSnapshots: true });
-
 const auth = firebase.auth();
 const authProvider = new firebase.auth.TwitterAuthProvider();
 
