@@ -50,7 +50,7 @@ module.exports = {
     ]
   },
   plugins: [
-    new CleanWebpackPlugin(['dist']),
+    new CleanWebpackPlugin({ verbose: true }),
     new HtmlWebpackPlugin({
       title: 'Challenge M8',
       chunks: ['vendor', 'main'],
