@@ -4,14 +4,10 @@
   "description": "14 Day Keto Challenge App",
   "private": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "echo \"Error: no test specified\"",
     "prestart": "firebase functions:config:get > .firebase-config.json",
     "start": "webpack-dev-server --mode development --color --progress --config webpack.dev.js",
-    "build": "webpack --mode production --color --progress --config webpack.prod.js",
-    "predeploy": "yarn build",
-    "deploy": "firebase deploy",
-    "deploy:functions": "firebase deploy --only functions",
-    "postdeploy": "rimraf ./dist"
+    "build": "webpack --mode production --color --progress --config webpack.prod.js"
   },
   "author": "Philip Sotirov | @fipo",
   "license": "ISC",
